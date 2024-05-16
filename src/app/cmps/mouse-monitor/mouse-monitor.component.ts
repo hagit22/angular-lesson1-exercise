@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class MouseMonitorComponent {
 
+  xPos: number = 0
+  yPos: number = 0
+
+  onMouseMove(mouseEvent: MouseEvent) {
+     this.xPos = mouseEvent.x
+     this.yPos = mouseEvent.y
+  }
+
 }

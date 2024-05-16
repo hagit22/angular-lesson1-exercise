@@ -1,0 +1,19 @@
+:host {
+    div {
+        width: 100vw;
+        height: 100vh;
+    }
+    .mouse-pos {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 45px;
+        width: 90px;
+        padding: 15px 25px;
+        border: 0.5px gray dashed;
+        background: whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
