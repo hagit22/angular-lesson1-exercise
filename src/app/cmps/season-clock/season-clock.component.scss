@@ -1,0 +1,49 @@
+@import '../../../styles/settings/_variables.scss';
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px black solid;
+        padding: 20px;
+        padding-top: 10px;
+    }
+    img {
+        width: 50%;
+        padding: 10px;
+    }    
+    label {
+        font-weight: 600;
+        font-size: 20px
+    }
+}
+
+// background color classes
+.light {
+    background-color: $color-background-light;
+}
+.dark {
+    background-color: $color-background-dark;
+}
+
+// season text-color classes
+.winter {
+    color: $color-season-winter;
+}
+.spring {
+    color: $color-season-spring;
+}
+.summer {
+    color: $color-season-summer;
+}
+.autumn {
+    color: $color-season-autumn;
+}
+

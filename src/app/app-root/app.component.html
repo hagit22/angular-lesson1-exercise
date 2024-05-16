@@ -1,0 +1,17 @@
+<div className='container'>
+  <label htmlFor="componentSelect">Select a Component:</label>
+  <select id="componentSelect" (change)="onChangeComponent($event)">
+    <option [value]="ComponentTypeEnum.SeasonClock">{{ComponentTypeEnum.SeasonClock}}</option>
+    <option [value]="ComponentTypeEnum.CountDown">{{ComponentTypeEnum.CountDown}}</option>
+    <option [value]="ComponentTypeEnum.MouseMonitor">{{ComponentTypeEnum.MouseMonitor}}</option>
+    <option [value]="ComponentTypeEnum.WatchersApp">{{ComponentTypeEnum.WatchersApp}}</option>
+  </select>
+  <div id="componentContainer">
+    <!-- you chose::  {{selectedComponent}} -->
+    <app-season-clock *ngIf="selectedComponent==ComponentTypeEnum.SeasonClock"/>
+    <app-count-down [countdownClock]=20 (due)="onDue()"
+      *ngIf="selectedComponent==ComponentTypeEnum.CountDown"/>
+    <app-mouse-monitor *ngIf="selectedComponent==ComponentTypeEnum.MouseMonitor"/>
+    <app-watchers-app *ngIf="selectedComponent==ComponentTypeEnum.WatchersApp"/>
+  </div>
+</div>

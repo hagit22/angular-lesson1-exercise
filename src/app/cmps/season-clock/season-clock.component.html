@@ -1,0 +1,21 @@
+<div (click)="onClick()" 
+
+    [ngClass]="{
+        light: currentBackground==BackgroundTypeEnum.Light, 
+        dark: currentBackground==BackgroundTypeEnum.Dark
+    }">
+
+    <img [src]="currentSeasonUrl"/>
+
+    <label
+            [ngClass]="{
+                winter: currentSeason==SeasonTypeEnum.Winter, 
+                spring: currentSeason==SeasonTypeEnum.Spring, 
+                summer: currentSeason==SeasonTypeEnum.Summer, 
+                autumn: currentSeason==SeasonTypeEnum.Autumn
+            }">
+        {{currentTimestamp | date: 'hh:mm:ss a'}}
+    </label>
+
+</div>
+

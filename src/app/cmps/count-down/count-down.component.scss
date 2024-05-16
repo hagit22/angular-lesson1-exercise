@@ -1,0 +1,30 @@
+@import '../../../styles/settings/_variables.scss';
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px black solid;
+        padding: 20px;
+    }
+    .caption {
+        font-weight: 700;
+        line-height: 24px;
+        font-size: 16px
+    }
+    .counter {
+        font-weight: 600;
+        font-size: 40px
+    }
+    .redCounter {
+        color: $color-countdown-red;
+    }
+}

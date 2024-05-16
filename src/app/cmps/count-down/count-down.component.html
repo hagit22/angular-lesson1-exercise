@@ -1,0 +1,10 @@
+<div>
+    <label class="caption">
+        {{countdownCaption}}
+    </label>
+    <label class="counter">
+        <span>
+            {{countdownClock | date: 'mm:'}}</span><span [ngClass]="{redCounter: tenOrLess}">{{countdownClock | date: 'ss'}}
+        </span>
+    </label>
+</div>
