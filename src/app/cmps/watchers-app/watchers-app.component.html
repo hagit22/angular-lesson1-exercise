@@ -1,1 +1,28 @@
-<p>watchers-app works!</p>
+<div *ngIf="selectedWatcher == null; then showList else showWatcher"></div>
+<ng-template #showList>
+    <div class="heading">
+        <h3>Who's watching?</h3>
+        <button mat-button (click)="onAddWatcher()">
+            <mat-icon>add_circle_outline</mat-icon>
+        </button>
+    </div>
+    <div class="watchers-list">
+        <div *ngFor="let watcher of watchersList; index as watcherIndex; trackBy: getWatcherKey">
+            <app-single-watcher 
+                [watcherIndex]="watcherIndex"
+                [watcher]="watcher"
+                (selectWatcher)="onSelectWatcher(watcherIndex)"
+                (removeWatcher)="onRemoveWatcher(watcherIndex)"
+            />
+        </div>
+    </div>
+</ng-template>
+<ng-template #showWatcher>
+    <div class="watcher-details-heading">
+        <button mat-button (click)="onBackToList()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <app-single-watcher [watcher]="selectedWatcher"/>
+    </div>
+    <app-watcher-details/>
+</ng-template>

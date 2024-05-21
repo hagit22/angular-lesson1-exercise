@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    //align-items: center;
+    img {
+        width: 80px;
+        height: 80px;
+    }
+    .watcher-text-for-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: first baseline;
+        padding-left: 20px;
+        margin: 10px 0;
+    }
+    .watcher-text-for-single {
+        padding: 0 20px;
+        margin: 10px 0;
+    }
+}

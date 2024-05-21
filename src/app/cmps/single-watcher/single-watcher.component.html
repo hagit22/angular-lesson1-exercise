@@ -1,0 +1,14 @@
+<div *ngIf="watcher != null" >
+    <img [src]="watcher.profileImageUrl" (click)="emitSelectWatcher($event)"/>
+    <div [ngClass]="{
+            'watcher-text-for-list': watcherIndex != null, 
+            'watcher-text-for-single': watcherIndex == null,
+        }">
+        <span>{{watcher.watcherName}}</span>
+        <span *ngIf="watcherIndex != null">
+            <button mat-button [id]="watcherIndex" (click)="emitRemoveWatcher($event)">
+                <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+        </span>
+    </div>
+</div>

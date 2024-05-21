@@ -55,8 +55,8 @@ export class SeasonClockComponent {
   }
 
   getSeasonUrl() {
-    //const baseUrl = "../../../../assets/seasons/"
-    const baseUrl = "/assets/seasons/"
+    //const baseUrl = "../../../../assets/img/seasons/"
+    const baseUrl = "/assets/img/seasons/"
     return baseUrl + this.currentSeason + ".png"
   }
 
