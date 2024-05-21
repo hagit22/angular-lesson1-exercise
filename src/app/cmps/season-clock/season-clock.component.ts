@@ -27,11 +27,11 @@ export class SeasonClockComponent {
       : SeasonClockModel.BackgroundType.Light
   }
 
-  getMonthFromTimestamp() {
+  private getMonthFromTimestamp() {
     return this.currentTimestamp.getMonth()
   }
   
-  getSeasonFromTimestamp() {
+  private getSeasonFromTimestamp() {
     const month = this.getMonthFromTimestamp()
     switch (month) {
       case SeasonClockModel.MonthType.December: return SeasonClockModel.SeasonType.Winter
@@ -54,7 +54,7 @@ export class SeasonClockComponent {
     }
   }
 
-  getSeasonUrl() {
+  private getSeasonUrl() {
     //const baseUrl = "../../../../assets/img/seasons/"
     const baseUrl = "/assets/img/seasons/"
     return baseUrl + this.currentSeason + ".png"

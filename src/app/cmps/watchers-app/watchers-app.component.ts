@@ -10,7 +10,9 @@ import { IWatcher, WatchersAppModel } from '../../models/watchers-app-model';
 export class WatchersAppComponent {
 
   watchersList: IWatcher[] = []
+  tvShowsMap = new Map<string, string[]>();
   selectedWatcher: IWatcher | null = null
+  selectedWatcherTvShows: string[] | null = []
 
   onAddWatcher() {
     let username = generateUsername("", 0, 10)
@@ -23,6 +25,7 @@ export class WatchersAppComponent {
       watcherName: username,
       profileImageUrl: profileImageUrl
     })
+    this.tvShowsMap.set(username, this.generateRandomTvShows())
   }
 
   onRemoveWatcher(watcherIndex: number) {
@@ -36,16 +39,20 @@ export class WatchersAppComponent {
 
   onSelectWatcher(watcherIndex: number) {
     this.selectedWatcher = this.watchersList[watcherIndex]
+    this.selectedWatcherTvShows = this.tvShowsMap.get(this.selectedWatcher.watcherName) || []
   }
 
   onBackToList() {
     this.selectedWatcher = null
   }
 
-// add back-button which puts null in selectedWatcher
-// prepare diagram
-
   getWatcherKey(watcherIndex: number) {
     return watcherIndex
+  }
+
+  private generateRandomTvShows()  {
+    const randomListLength = Math.floor(Math.random() * 6 + 5)  // number between 5 and 10
+    const shuffledList = WatchersAppModel.KnownTVShows.sort(() => 0.5 - Math.random())
+    return shuffledList.slice(0, randomListLength)
   }
 }

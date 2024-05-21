@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { WatchersAppModel } from '../../models/watchers-app-model';
 
 @Component({
   selector: 'app-watcher-details',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './watcher-details.component.scss'
 })
 export class WatcherDetailsComponent {
+  @Input() tvShowsList: string[] | null = []
 
+  getTvShowKey(showsIndex: number) {
+    return showsIndex
+  }
 }
+
+

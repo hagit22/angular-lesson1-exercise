@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    .heading {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        img {
+            width: 45px;
+        }
+    }
+    .tvShows-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start
+    }
+    .tvShow-bullet {
+        //font-size: 14px;
+        line-height: 16px;
+        margin-top: 20px;
+        //font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: fantasy
+    }
+}

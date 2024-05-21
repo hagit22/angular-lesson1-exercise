@@ -14,7 +14,7 @@ export class CountDownComponent {
     this.countdownClock *= CountdownModel.MILLISECONDS
 
     this.intervalId = <NodeJS.Timeout> setInterval(() => {
-      if (this.countdownClock <= 0 && this.intervalId != null) {
+      if (this.countdownClock <= 1 && this.intervalId != null) {
         this.due.emit()
         clearInterval(this.intervalId)
         return

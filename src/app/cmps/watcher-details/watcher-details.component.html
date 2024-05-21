@@ -1,1 +1,8 @@
-<p>watcher-details works!</p>
+<div class="heading">
+    <h2>My Favorite TV Shows</h2>
+    <img src="../../assets/img/smiling-TV.jpg"/>
+</div>
+<div class="tvShows-list" *ngFor="let tvShow of tvShowsList; index as showsIndex; trackBy: getTvShowKey">
+    <span class="tvShow-bullet">{{showsIndex}})  {{tvShow}}</span>
+</div>
+
